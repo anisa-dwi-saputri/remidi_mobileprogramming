@@ -18,6 +18,6 @@ Proyek ini adalah aplikasi Flutter yang menampilkan daftar mahasiswa beserta nom
 
 ## Screenshot
 
-- (/images/ss1.png)
-- (/images/ss2.png)
-- (/images/ss3.png)
+- (https://github.com/anisa-dwi-saputri/remidi_mobileprogramming/blob/main/images/ss1.png)
+- (https://github.com/anisa-dwi-saputri/remidi_mobileprogramming/blob/main/images/ss2.png)
+- (https://github.com/anisa-dwi-saputri/remidi_mobileprogramming/blob/main/images/ss3.png)
