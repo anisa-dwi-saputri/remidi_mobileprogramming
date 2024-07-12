@@ -14,3 +14,10 @@ Proyek ini adalah aplikasi Flutter yang menampilkan daftar mahasiswa beserta nom
 - Setiap item dalam daftar menampilkan nama mahasiswa dan NIM.
 - Warna latar belakang tombol bergantian antara biru dan hijau untuk setiap item.
 - Header aplikasi menampilkan informasi proyek dengan gaya yang menarik.
+
+
+## Screenshot
+
+- (/images/ss1.png)
+- (/images/ss2.png)
+- (/images/ss3.png)
