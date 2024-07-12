@@ -1,16 +1,16 @@
-# myapp
 
-A new Flutter project.
+# REMIDI MOBILE PROGRAMMING
 
-## Getting Started
+Proyek ini adalah aplikasi Flutter yang menampilkan daftar mahasiswa beserta nomor induk mahasiswa (NIM) mereka. Aplikasi ini memiliki tampilan antarmuka pengguna yang modern dan menarik dengan menggunakan elemen-elemen Material Design.
 
-This project is a starting point for a Flutter application.
+## Authors
 
-A few resources to get you started if this is your first Flutter project:
+- [@ANISA DWI SAPUTRI](https://github.com/anisa-dwi-saputri)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+
+- Menampilkan daftar mahasiswa dalam bentuk daftar yang bisa di-scroll.
+- Setiap item dalam daftar menampilkan nama mahasiswa dan NIM.
+- Warna latar belakang tombol bergantian antara biru dan hijau untuk setiap item.
+- Header aplikasi menampilkan informasi proyek dengan gaya yang menarik.
