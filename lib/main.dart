@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 void main() {
   runApp(const MyApp());
@@ -32,72 +31,71 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Map<String, String>> mahasiswa = [
-    {'nama': 'YUSUF JAUHAR ALIF FAQIH', 'nim': 'STI202102390'},
-    {'nama': 'FEBRY ADI PRATAMA', 'nim': 'STI202102391'},
-    {'nama': 'RANDI PANGESTU', 'nim': 'STI202102392'},
-    {'nama': 'SEPTIASIH NUR INAYAH', 'nim': 'STI202102393'},
-    {'nama': 'WILSYA NURALISA', 'nim': 'STI202102394'},
+    {'nama': 'BAGUS YANUAR FITRIADI', 'nim': 'STE202202870'},
+    {'nama': 'ADINI MEILINA', 'nim': 'STE202202871'},
+    {'nama': 'ALDI TATA IRFANSAH', 'nim': 'STE202202872'},
+    {'nama': 'ANDRIANSYAH', 'nim': 'STE202202873'},
+    {'nama': 'ANGGA MUSFIK JAITUN	', 'nim': 'STE202202874'},
+    {'nama': 'ANISA DWI SAPUTRI	', 'nim': 'STE202202875'}, // Anda di nomor 6
+    {'nama': 'AYUB DWI SURYO ', 'nim': 'STE202202876'},
+    {'nama': 'BAGAS TRI PURWOKO', 'nim': 'STE202202877'},
+    {'nama': 'CYNDI YUNI NOVITASARI', 'nim': 'STE202202878'},
+    {'nama': 'DESTI PUSPANINGRUM', 'nim': 'STE202202879'},
+    {'nama': 'DIAN NANDA ELISMA', 'nim': 'STE202202880'},
   ];
-
-  int _currentIndex = 0;
-  late Timer _timer;
-  final List<Color> _colors = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.orange,
-    Colors.purple,
-  ];
-  Color _currentColor = Colors.black;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentColor = _colors[_currentIndex];
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        _currentIndex = (_currentIndex + 1) % mahasiswa.length;
-        _currentColor = _colors[_currentIndex];
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Container(
-          color: Colors.white,
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                mahasiswa[_currentIndex]['nama']!,
-                style: TextStyle(
-                  fontSize: 24,
-                  color: _currentColor,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 200.0,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Container(
+                color: Color.fromARGB(255, 48, 46, 46),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40.0), // Jarak dengan teks atasnya
+                    child: Text(
+                      'Remidi Mobile programming ANISA DWI SAPUTRI STE202202875',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
-              Text(
-                'NIM: ${mahasiswa[_currentIndex]['nim']}',
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  padding: EdgeInsets.all(8.0),
+                  height: 100.0,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: index % 2 == 0 ? Colors.blue : Colors.green,
+                    ),
+                    child: ListTile(
+                      title: Text(
+                        mahasiswa[index]['nama']!,
+                        style: const TextStyle(fontSize: 24, color: Colors.white),
+                      ),
+                      subtitle: Text(
+                        'NIM: ${mahasiswa[index]['nim']}',
+                        style: const TextStyle(fontSize: 16, color: Colors.white70),
+                      ),
+                    ),
+                  ),
+                );
+              },
+              childCount: mahasiswa.length,
+            ),
+          ),
+        ],
       ),
     );
   }
